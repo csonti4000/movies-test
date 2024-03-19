@@ -10,7 +10,7 @@
                 @foreach ($movies as $movie)
                     <!-- Post preview-->
                     <div class="post-preview">
-                        <a href="{{ url('movie', $movie->id) }}">
+                        <a href="{{ route('movie', $movie->id) }}">
                             <h2 class="post-title">{{ $movie->title}}</h2>
                             <h3 class="post-subtitle">{{ $movie->genre}}, {{$movie->release_date->format('Y')}}</h3>
                         </a>
