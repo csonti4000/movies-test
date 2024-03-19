@@ -1,25 +1,14 @@
 @extends('layouts.default')
 @section('content')
 
-    <!-- Page Header-->
-    <header class="masthead" style="background-image: url('{{URL::asset('assets/img/keresztapa.jpg') }}')">
-        <div class="container position-relative px-4 px-lg-5">
-            <div class="row gx-4 gx-lg-5 justify-content-center">
-                <div class="col-md-10 col-lg-8 col-xl-7">
-                    <div class="post-heading">
-                        <h1>Film cím</h1>
-                        <h2 class="subheading">Zsáner, évszám</h2>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </header>
+    <x-header-component :title="$movie->title" :sub-title="$movie->genre . ', ' . $movie->release_date->format('Y')" :img-url="URL::asset('assets/img/keresztapa.jpg')"/>
+
     <!-- Post Content-->
     <article class="mb-4">
         <div class="container px-4 px-lg-5">
             <div class="row gx-4 gx-lg-5 justify-content-center">
                 <div class="col-md-10 col-lg-8 col-xl-7">
-                    <p>(film leírása ide)</p>
+                    <p>{{ $movie->description }}</p>
                 </div>
             </div>
         </div>
